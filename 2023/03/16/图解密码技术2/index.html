@@ -1,0 +1,298 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>Poem blog | Poem blog</title><meta name="author" content="渊鱼"><meta name="copyright" content="渊鱼"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="title:《图解密码技术》梳理和归纳总结–2tags:技术,密码学,信息安全 个人总结对称密钥是机密性的精华，哈希函数是完整性的精华。  混合密码系统 使用方法：用对称密钥提高速度，用公钥密码保护会话密钥   单向散列函数 解决问题：能识别出篡改，无法识别出伪装。 具备性质：抗碰撞性（散列值不相同），单向性（无法反向算出） 算法 MD5 SHA-1（不推荐使用）,SHA-2,SHA-3   攻击">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Poem blog">
+<meta property="og:url" content="http://example.com/2023/03/16/%E5%9B%BE%E8%A7%A3%E5%AF%86%E7%A0%81%E6%8A%80%E6%9C%AF2/index.html">
+<meta property="og:site_name" content="Poem blog">
+<meta property="og:description" content="title:《图解密码技术》梳理和归纳总结–2tags:技术,密码学,信息安全 个人总结对称密钥是机密性的精华，哈希函数是完整性的精华。  混合密码系统 使用方法：用对称密钥提高速度，用公钥密码保护会话密钥   单向散列函数 解决问题：能识别出篡改，无法识别出伪装。 具备性质：抗碰撞性（散列值不相同），单向性（无法反向算出） 算法 MD5 SHA-1（不推荐使用）,SHA-2,SHA-3   攻击">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/image/3.jpg">
+<meta property="article:published_time" content="2023-03-16T14:52:42.720Z">
+<meta property="article:modified_time" content="2023-03-16T14:56:21.677Z">
+<meta property="article:author" content="渊鱼">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/image/3.jpg"><link rel="shortcut icon" href="/image/4.png"><link rel="canonical" href="http://example.com/2023/03/16/%E5%9B%BE%E8%A7%A3%E5%AF%86%E7%A0%81%E6%8A%80%E6%9C%AF2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Poem blog',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-03-16 22:56:21'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/back.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/image/3.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 产品内容</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 技术知识</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 设计知识</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 人文社科</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 杂谈</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background: url(/image/2.jpg)"><nav id="nav"><span id="blog-info"><a href="/" title="Poem blog"><span class="site-name">Poem blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 产品内容</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 技术知识</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 设计知识</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 人文社科</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 杂谈</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">无题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-03-16T14:52:42.720Z" title="发表于 2023-03-16 22:52:42">2023-03-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-03-16T14:56:21.677Z" title="更新于 2023-03-16 22:56:21">2023-03-16</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>title:《图解密码技术》梳理和归纳总结–2<br>tags:技术,密码学,信息安全</p>
+<p>个人总结<br>对称密钥是机密性的精华，哈希函数是完整性的精华。</p>
+<ul>
+<li>混合密码系统<ul>
+<li>使用方法：用对称密钥提高速度，用公钥密码保护会话密钥</li>
+</ul>
+</li>
+<li>单向散列函数<ul>
+<li>解决问题：能识别出篡改，无法识别出伪装。</li>
+<li>具备性质：抗碰撞性（散列值不相同），单向性（无法反向算出）</li>
+<li>算法<ul>
+<li>MD5</li>
+<li>SHA-1（不推荐使用）,SHA-2,SHA-3</li>
+</ul>
+</li>
+<li>攻击方式<ul>
+<li>暴力破解（两个不同的话，一样的散列值）</li>
+<li>生日攻击（两个不同的话，一样的散列值）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>消息认证码（MAC）<ul>
+<li>解决问题：确认完整性</li>
+<li>使用方法：发送者和接收者持有共享密钥，加密后输出固定长度的MAC值</li>
+<li>存在问题：密钥配送问题</li>
+<li>对消息认证码的攻击<ul>
+<li>重放攻击<ul>
+<li>破解方式：约定序号，时间戳等</li>
+</ul>
+</li>
+<li>密钥推测攻击（暴力破解）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>数字签名<ul>
+<li>解决问题：识别伪造，防止否认</li>
+<li>使用方法：私钥签名，公钥解密</li>
+<li>攻击方式<ul>
+<li>中间人攻击</li>
+<li>对单向散列函数的攻击</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>证书<ul>
+<li>解决问题：认证，解决中间人攻击</li>
+<li>使用方法：通过认证机构的私钥对所需公钥进行签名</li>
+<li>对证书的攻击<ul>
+<li>注册之前进行攻击</li>
+<li>注册相似人名攻击</li>
+<li>伪装认证机构攻击</li>
+<li>钻CRL空子攻击<br>密码技术的对比</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>对称密码<br>公钥密码<br>发送者<br>用共享密钥加密<br>用公钥加密<br>接收者<br>用共享密钥解密<br>用私钥解密<br>密钥配送问题<br>存在<br>不存在，但公钥需要另外认证<br>机密性<br>✔<br>✔</p>
+<p>消息认证码<br>数字签名<br>发送者<br>用共享密钥计算MAC值<br>私钥生成签名<br>接收者<br>用共享密钥计算MAC值<br>用公钥验证签名<br>密钥配送问题<br>存在<br>不存在，但公钥需要另外认证<br>完整性<br>✔<br>✔<br>认证<br>✔（仅限通信双方）<br>✔（适用于所有人）<br>防止否认<br>×<br>✔</p>
+<p>第六章：混合密码系统<br>混合密码系统（ hybrid cryptosystem )是将对称密码和公钥密码的优势相结合的方法<br>混合密码系统的组成机制<br>• 用对称密码加密消息<br>• 通过伪随机数生成器生成对称密码加密中使用的会话密钥<br>• 用公钥密码加密会话密钥<br>• 从混合密码系统外部赋予公钥密码加密时使用的密钥</p>
+<p>混合密码系统应用<br>网络上的密码通信所使用的 SSL&#x2F;TLS 都运用了混合密码系统。</p>
+<p>第七章：单向散列函数<br>通过使用单向散列函数，即便是确认几百 MB 大小的文件的完整性，也只要对比很短的散列值就可以了<br>单向散列函数的输人是任意长度的消息，无论输入多长的消息，单向散列函数都能够生成长度很短的散列值。</p>
+<p>抗碰撞性<br>两个不同的消息产生同一个散列值的情况称为碰撞<br>难以发现碰撞的性质称为抗碰撞性<br>单向性<br>单向性指的是无法通过散列值反算出消息的性质。</p>
+<p>实际应用</p>
+<ul>
+<li>检测软件是否被篡改</li>
+<li>基于口令的加密<ul>
+<li>PBE 的原理是将口令和盐（ salt, 通过伪随机数生成器产生的随机值 ）混合后计算其散列 值，然后将这个散列值用作加密的密钥。通过这样的方法能够防御针对口令的字典攻击</li>
+</ul>
+</li>
+<li>消息认证码</li>
+<li>数字签名<ul>
+<li>数字签名的处理过程非常耗时，一般通过单向散列函数计算 出消息的散列值，然后再对这个散列值施加数字签名</li>
+</ul>
+</li>
+<li>伪随机数生成<ul>
+<li>可以利用单向散列函数的单向性，保证不可预测性</li>
+</ul>
+</li>
+<li>一次性口令<ul>
+<li>一次性口令经常被用于服务器对客户端的合法性认证</li>
+</ul>
+</li>
+</ul>
+<p>具体例子<br>MD4、MD5<br>  MD4、MD5 的强抗碰撞性已经被攻破，也就是说，现在已经能够产生具备相同散列值的两条不同的消息，因此它也已经不安全了，不做概述。<br>SHA-1、SHA-256、SHA-384、SHA-512<br>  SHA-1 的强抗碰撞性已于 2005 年被攻破  ，也就是说，现在已经能够产生具备相同散列值的两条不同的消息。不过，SHA-2 还尚未被攻破。</p>
+<p>对单向散列函数的攻击</p>
+<p>暴力破解<br>  从文档文件所具有的冗余性入手。所谓文档文件的冗余性，是指在不改变文档 意思的前提下能够对文件的内容进行修改的程度。<br>  举个例子，下面这些句子基本上说的都是一个意思。<br>   Alice 要支付的金额为 1 亿元。<br>   Alice 要支付的金额为壹亿元。<br>  Alice 要支付的金额为 100000000 元。<br>  Alice 要支付的金额为 ¥ 100,000,000。<br>  Alice 要支付的金额为：1 亿元。<br>  Alice需要支付的金额为 1 亿元。<br>  Alice 应支付 1 亿元。<br>  作为报酬，Alice需要支付 ] 亿元。<br>  如果在这一大堆 “1亿元合同” 中，能够找到一个合同和 原本的 “100 万元合同” 恰 好产生相同的散列值，那 就算是成功了<br>生日攻击<br>  事先准备了两份具 备相同散列值的 “ 100 万元合同” 和 “1 亿元合同”，然后将 “100 万元合同” 交给 Alice 让她计 算散列值。随后，Mallory 再像故事 1 中一样，把 “100 万元合同” 掉包成 “1 亿元合同”。<br>  这样的攻击，一般称为生日攻击或者 冲突攻击，这是一种试图破解单向散列函数的 “强抗碰撞性” 的攻击。</p>
+<p>单向散列函数无法解决的问题<br>  单向散列函数能够辨别出 “篡改”，但无法辨别出 “伪装”</p>
+<p>第八章：消息认证码</p>
+<p>  使用消息认证码可以确认自己收到的消息是否就是发送者的本意，也就是说，使用消息认证码可以判断消息是否被篡改，以及是否有人伪装成发送者发送了该消息。 </p>
+<p>  消息认证码是一种确认完整性并进行认证的技术，取三个单词的首字母，简称为 MAC。<br>  消息认证码的输人包括任意长度的消息和一个发送者与接收者之间共享的密钥，它可以输出固定长度的数据，这个数据称为 MAC 值。 根据任意长度的消息输出固定长度的数据，这一点和单向散列函数很类似。但是单向散列函数中计算散列值时不需要密钥，相对地，消息认证码中则需要使用发送者与接收者之间共享的密钥。 要计算 MAC 必须持有共享密钥，没有共享密钥的人就无法计算 MAC 值，消息认证码正是 利用这一性质来完成认证的。<br><img src="/image/2-1.png" alt="avatar"><br>消息认证码的应用实例</p>
+<ul>
+<li>SWIFT<ul>
+<li>是于1973年成立的一个组织，其目的是为国际银行间的交易保驾护航。，SWIFT 中使用了消息认证码。</li>
+</ul>
+</li>
+<li>IPsec</li>
+<li>SSL&#x2F;TLS<ul>
+<li>SSL&#x2F;TLS 中对通信内容的认证和完整性校验也使用了消息认证码。关<br>对消息认证码的攻击</li>
+</ul>
+</li>
+</ul>
+<p>重放攻击<br>  狡猾的主动攻击者 Mallory 想到可以通过将事先保存的正确 MAC 值不断重放来发动攻击, 如果这种攻击成功的话，就可以让 100 万元滚雪球般地变成 1 亿元。<br>  有几种方法可以防御重放攻击。</p>
+<ul>
+<li>序号</li>
+<li>时间戳</li>
+<li>nonce<ul>
+<li>接收者先向发送者发送一个一次性的随机数，这个随机数一般称为 nonce。发 送者在消息中包含这个 nonce 并计算 MAC 值。由于每次通信时 nonce 的值都会发生变化，因此无法进行重放攻击。<br>暴力破解<br>生日攻击</li>
+</ul>
+</li>
+</ul>
+<p>第九章：数字签名——消息到底是谁写的<br>  数字签名对签名密钥和验证密钥进行了区分，使用验证密钥是无法生成签名的。此外，签名密钥只能由签名的人持有，而验证密钥则是任何需要验证签名的人都可以持有。<br>  数字签名的作用本来就不是保证机密性。<br>  防止否认，认证，识别修改</p>
+<p>私钥<br>公钥<br>公钥密码<br>接收者解密使用<br>发送者加密使用<br>数字签名<br>签名者生成签名使用<br>验证者验证签名使用<br>谁持有密钥？<br>个人持有<br>只要需要，任何人都能持有<br><img src="/image/2-2.png" alt="avatar"></p>
+<p>数字签名的方法<br>  • 直接对消息签名的方法<br>  • 对消息的散列值签名的方法</p>
+<p>对数字签名的攻击<br>中间人攻击<br>对单向散列函数的攻击<br>  数字签名中所使用的单向散列函数必须具有抗碰撞性，否则攻击者就可以生成另外一条不 同的消息，使其与签名所绑定的消息具有相同的散列值<br>利用数字签名攻击公钥密码<br>  由于数字签名是公钥加密的反向操作，所以攻击者可能将该公钥加密的密文，发送给密钥持有者，让其进行误签名，以此来达到对消息进行解密的目的<br>数字签名无法解决的问题<br>  用数字签名既可以识别出篡改和伪装，还可以防止否认。<br>  然而，要正确使用数字签名，有一个大前提，那就是用于验证签名的公钥必须属于真正的发送者。<br>  为了能够确认自己得到的公钥是否合法，我们需要使用证书。<br>第十章：证书<br>  公钥证书其实和驾照很相似，里面记有姓名、组织、邮箱地址等个人信息，以及属于此人的公钥，并由认证机构施加数字签名 只要看到公钥证书，我们就可以知道认证机构认定该公钥的确属于此人。公钥证书简称为证书<br><img src="/image/2-3.png" alt="avatar"></p>
+<p>  证书是由认证机构颁发的，使用者需要对证书进行验证，于是，人们制定了证书的标准规范，其中使用最广泛的是由 ITU和 ISO 制定的X.509（RFC3280）很多应用程序都支持 X.509 并将其作为证书生成和交换的标准规范。<br>证书包含元素<br><img src="/image/2-4.png" alt="avatar"><br>公钥基础设施（PKI）<br>  公钥基础设施是为了能够更有效地运用公钥而制定的一系列规 范和规格的总称。公钥基础设施一般根据其英语缩写而简称为 PKI。<br>  PKI 只是一个总称，而并非指某一个单独的规范或规格。例如，RSA 公司所制定 的 PKCS ( Public-Key Cryptography Standards, 公钥密码标准 ）系列规范也是 PKI 的一种，而互联网规格 RFC ( Request for Comments )中也有很多与 PKI 相关的文档。此外，上一节中我们提到的 X.509 这样的规范也是 PKI 的一种。在开发 PKI 程序时所使用的由各个公司编写的 API ( Application Programming Interface , 应用程序编程接口）和规格设计书也可以算是 PKJ 的相关规格。</p>
+<p><img src="/image/2-5.png" alt="avatar"><br>  【 注册公钥的用户所进行的操作 】 </p>
+<ul>
+<li>生成密钥对（ 也可以由认证机构生成 ） </li>
+<li>在认证机构注册公钥 </li>
+<li>向认证机构申请证书 </li>
+<li>根据需要申请作废已注册的公钥 </li>
+<li>解密接收到的密文 </li>
+<li>对消息进行数字签名<br>  【 使用已注册公钥的用户所进行的操作 】 </li>
+<li>将消息加密后发送给接收者 </li>
+<li>验证数字签名<br>认证机构CA<br>认证机构（ Certification Authority, CA )是对证书进行管理的人<br>认证机构具体所进行的操作如下。 </li>
+<li>生成密钥对（ 也可以由用户生成 ） </li>
+<li>在注册公钥时对本人身份进行认证 </li>
+<li>生成并颁发证书 </li>
+<li>作废证书</li>
+</ul>
+<p>对证书的攻击<br>在公钥注册之前进行攻击<br>假设 Bob 生成了密钥对，并准备在认证机构注册自己的公钥。在认证机构进行数字签名之前，主动攻击Mallory 将公钥替换成了自己的。这样一来，认证机构就会对 “Bob 的个人信息” 和 “Mallory 的公钥” 这个组合进行数字签名。<br>要防止这种攻击，我们可以采用下面的做法。例如 Bob 可以在将公钥发送给认证机构进行注册时，使用认证机构的公钥对 Bob 的公钥进行加密。此外，认证机构在确认 Bob 的身份时，也可以将公钥的指纹一并发送给 Bob 请他进行确认。<br>注册相似人名进行攻击<br>例如，假设 Bob 的用户信息中名字的部分是：<br>Name &#x3D; Bob<br>( 首字母大写）<br>而 Mallory 用另一个类似的用户信息：<br>Name &#x3D; BOB<br>( 所有字母大写 ）<br>注册了另一个不同的公钥。这个公钥的名字叫作 BOB, 但实际上却是 Mallory 的公钥。<br>要防止这种攻击，认证机构必须确认证书中所包含的信息是否真的是其持有者的个人信息， 当本人身份确认失败时则不向其颁发证书。<br>窃取认证机构的私钥进行攻击<br>要窃取认证机构的私钥，需要人侵认证机构的计算机，或者收买有权访问认证机构私钥的人。认证机构是否妥善保卫自己的私钥，是与该认证机构所颁发的证书的可信度密切相关的。<br>攻击者伪装成认证机构进行攻击<br>如果认证机构本身不可信，即便证书合法，其中的公钥也不能使用。虽然这一点是理所当然的，但是要防范这种攻击却需要 Alice 自己多加留心才行，她必须要注意自己所得到的证书是哪个认证机构颁发的，这个认证机构是否可信。<br>钻 CRL 的空子进行攻击<br>从公钥失效到 Alice 收到证书作废清单（ CRL )需要经过一段时间，主动攻击者 Mallory 可 以利用 CRL 发布的时间差来发动攻击。<br>对于这种攻击的对策是：<br>当公钥失效时尽快通知认证机构（ Bob )<br>尽快发布 CRL ( Trent )<br>及时更新 CRL ( Alice )<br>这些对策和信用卡的运营方法很相似。此外，我们还需要做到：<br>在使用公钥前，再次确认公钥是否已经失效（ Alice ) </p>
+<p>通过钻 CRL 的空子，就有可能实现否认。不做赘述。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">渊鱼</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/03/16/%E5%9B%BE%E8%A7%A3%E5%AF%86%E7%A0%81%E6%8A%80%E6%9C%AF2/">http://example.com/2023/03/16/%E5%9B%BE%E8%A7%A3%E5%AF%86%E7%A0%81%E6%8A%80%E6%9C%AF2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Poem blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/image/3.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/03/16/%E5%9B%BE%E8%A7%A3%E5%AF%86%E7%A0%81%E6%8A%80%E6%9C%AF3/" title=""><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info"></div></div></a></div><div class="next-post pull-right"><a href="/2023/03/09/%E5%9B%BE%E8%A7%A3%E5%AF%86%E7%A0%81%E6%8A%80%E6%9C%AF%E6%A2%B3%E7%90%86%E5%92%8C%E5%BD%92%E7%BA%B3%E6%80%BB%E7%BB%93--1/" title="《图解密码技术》梳理和归纳总结--1"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">《图解密码技术》梳理和归纳总结--1</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/image/3.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">渊鱼</div><div class="author-info__description">记录一些看过的书&产品成长学习轨迹</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/poemweb/poemweb.github.io" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:545557953@qq.com" target="_blank" title="545557953@qq.com"><i class="fas fa-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/16/%E5%9B%BE%E8%A7%A3%E5%AF%86%E7%A0%81%E6%8A%80%E6%9C%AF3/" title="无题">无题</a><time datetime="2023-03-16T14:53:26.254Z" title="发表于 2023-03-16 22:53:26">2023-03-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/16/%E5%9B%BE%E8%A7%A3%E5%AF%86%E7%A0%81%E6%8A%80%E6%9C%AF2/" title="无题">无题</a><time datetime="2023-03-16T14:52:42.720Z" title="发表于 2023-03-16 22:52:42">2023-03-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/09/%E5%9B%BE%E8%A7%A3%E5%AF%86%E7%A0%81%E6%8A%80%E6%9C%AF%E6%A2%B3%E7%90%86%E5%92%8C%E5%BD%92%E7%BA%B3%E6%80%BB%E7%BB%93--1/" title="《图解密码技术》梳理和归纳总结--1">《图解密码技术》梳理和归纳总结--1</a><time datetime="2023-03-09T09:20:10.334Z" title="发表于 2023-03-09 17:20:10">2023-03-09</time></div></div></div></div></div></div></main><footer id="footer" style="background: url(/css/back.css)"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 渊鱼</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
